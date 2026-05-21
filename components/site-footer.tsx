@@ -138,18 +138,6 @@ export function SiteFooter() {
                 <img src={src} alt={alt} className="h-5 w-auto object-contain" />
               </a>
             ))}
-            <a
-              href="https://www.gamblingcommission.gov.uk/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center px-3 py-2 rounded-lg border border-primary/30 bg-primary/10 hover:bg-primary/20 transition-colors"
-              aria-label="UK Gambling Commission — opens in new tab"
-              role="listitem"
-            >
-              <span className="text-[10px] font-heading font-bold text-primary uppercase tracking-widest leading-tight text-center">
-                UK Gambling<br />Commission
-              </span>
-            </a>
           </div>
         </div>
       </div>
