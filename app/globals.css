@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── Trusted UK Betting Sites List — deep charcoal sports theme ── */
+    --background:        220  18%   8%;   /* #0f1218 — near-black */
+    --foreground:        210  20%  92%;   /* #e6eaf2 — off-white text */
+
+    --card:              220  16%  12%;   /* #181d27 — dark card surface */
+    --card-foreground:   210  20%  92%;
+
+    --popover:           220  16%  12%;
+    --popover-foreground: 210  20%  92%;
+
+    --surface:           220  14%  16%;   /* #1f2534 — lifted panel */
+
+    /* Verified green — primary trust accent */
+    --primary:           142  68%  38%;   /* #1f9c50 — verified green */
+    --primary-foreground: 0    0%  100%;  /* white on green */
+
+    /* Dark slate — secondary */
+    --secondary:         220  14%  18%;
+    --secondary-foreground: 210  20%  80%;
+
+    --muted:             220  14%  18%;
+    --muted-foreground:  220  12%  52%;   /* #72788a */
+
+    --accent:            142  68%  38%;
+    --accent-foreground: 0    0%  100%;
+
+    /* Amber — highlight / score accent */
+    --highlight:         38   95%  50%;   /* #f59e0b */
+    --highlight-foreground: 220  18%  8%;
+
+    /* Deep navy — header / dark surfaces */
+    --navy:              222  32%   9%;   /* #0c1220 */
+    --navy-foreground:   210  20%  92%;
+
+    /* Danger */
+    --destructive:       0    72%  54%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border:            220  14%  22%;   /* #2a3042 — subtle dark border */
+    --input:             220  14%  22%;
+    --ring:              142  68%  38%;   /* green ring */
+    --radius:            0.5rem;
+
+    /* Live badge green */
+    --live:              148  72%  44%;
+    --live-foreground:   0    0%  100%;
+  }
+}
+
+@layer base {
+  * { @apply border-border box-border; }
+  body { @apply bg-background text-foreground; }
+  h1, h2, h3, h4 { @apply font-heading; }
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Verified green glow for rank #1 card ── */
+.rank-1-glow {
+  box-shadow:
+    0 0 0 2px hsl(142 68% 38% / 0.55),
+    0 6px 40px hsl(142 68% 38% / 0.14);
+}
+
+/* ── Animated green underline for nav links ── */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 0; height: 2px;
+  background: hsl(var(--primary));
+  transition: width 0.2s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* ── Card hover lift ── */
+.card-hover {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card-hover:hover {
+  box-shadow: 0 8px 40px hsl(142 68% 38% / 0.10);
+  transform: translateY(-2px);
+}
+
+/* ── Section backgrounds ── */
+.section-dark     { background: hsl(var(--background)); }
+.section-card     { background: hsl(var(--card)); }
+.section-surface  { background: hsl(var(--surface)); }
+
+/* ── Sports pitch pattern overlay ── */
+.section-pitch {
+  position: relative;
+}
+.section-pitch::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(hsl(142 68% 38% / 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(142 68% 38% / 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+.section-pitch > * { position: relative; z-index: 1; }
+
+/* ── Green divider line ── */
+.trusted-divider {
+  border-color: hsl(142 68% 38% / 0.25);
+}
+
+/* ── Verified badge shimmer ── */
+.trusted-badge {
+  background: linear-gradient(90deg, hsl(142 68% 36%), hsl(158 72% 44%));
+  color: hsl(0 0% 100%);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* ── Score amber accent ── */
+.score-amber {
+  color: hsl(var(--highlight));
+}
