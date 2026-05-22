@@ -4,7 +4,7 @@ import { Inter, Outfit } from "next/font/google"
 import "./globals.css"
 import { SiteFooter } from "@/components/site-footer"
 import { ConsentBanner } from "@/components/consent-banner"
-import { VerifiedPickModal } from "@/components/verified-pick-modal"
+
 
 const _inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const _outfit = Outfit({
@@ -45,7 +45,6 @@ export default function RootLayout({
           {children}
           <SiteFooter />
           <ConsentBanner />
-          <VerifiedPickModal />
         </div>
       </body>
     </html>
